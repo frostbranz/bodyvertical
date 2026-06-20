@@ -1,51 +1,53 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Admin Panel</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Body Vertical System</title>
+
+  <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
 
+<header class="topbar">
+  <div class="logo">BODY VERTICAL</div>
+</header>
+
 <!-- LOGIN -->
-<div id="login">
+<div id="loginPanel" class="card center">
   <h2>Admin Login</h2>
-  <input id="adminCode" placeholder="Kod admina" />
-  <button onclick="login()">Zaloguj</button>
-  <p id="loginError"></p>
+  <input id="adminCode" placeholder="Enter admin code"/>
+  <button id="loginBtn">Login</button>
+  <p id="loginMsg"></p>
 </div>
 
-<!-- APP -->
-<div id="app" style="display:none;">
+<!-- MAIN APP -->
+<div id="app" class="hidden">
 
-  <h1>Admin Panel</h1>
+  <div class="card">
+    <h2>Search</h2>
 
-  <!-- DODAWANIE -->
-  <h2>Dodaj osobę</h2>
-  <form id="addForm">
-    <input id="code" placeholder="Kod" required />
-    <input id="name" placeholder="Nazwa" required />
+    <input id="searchInput" placeholder="code or name"/>
+    <button id="searchBtn">Search</button>
 
-    <select id="type">
-      <option value="son">son</option>
-      <option value="torta">torta</option>
-      <option value="baddy">baddy</option>
-    </select>
+    <div id="results"></div>
+  </div>
 
-    <button type="submit">Dodaj</button>
-  </form>
+  <div class="card">
+    <h2>Admin panel</h2>
 
-  <!-- WYSZUKIWANIE -->
-  <h2>Wyszukiwanie</h2>
-  <input id="search" placeholder="Kod lub nazwa" />
+    <input id="code" placeholder="code"/>
+    <input id="name" placeholder="name"/>
+    <input id="type" placeholder="type"/>
 
-  <!-- WYNIKI -->
-  <div id="results"></div>
+    <button id="addBtn">Add</button>
+
+    <p id="adminMsg"></p>
+  </div>
 
 </div>
 
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 </html>
