@@ -1,4 +1,31 @@
-<input id="code" placeholder="Kod" required />
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="login">
+  <h2>Admin Login</h2>
+  <input id="adminCode" placeholder="Kod admina" />
+  <button onclick="login()">Zaloguj</button>
+  <p id="loginError"></p>
+</div>
+
+<!-- APP -->
+<div id="app" style="display:none;">
+
+  <h1>Admin Panel</h1>
+
+  <!-- DODAWANIE -->
+  <h2>Dodaj osobę</h2>
+  <form id="addForm">
+    <input id="code" placeholder="Kod" required />
     <input id="name" placeholder="Nazwa" required />
 
     <select id="type">
@@ -10,12 +37,15 @@
     <button type="submit">Dodaj</button>
   </form>
 
+  <!-- WYSZUKIWANIE -->
   <h2>Wyszukiwanie</h2>
   <input id="search" placeholder="Kod lub nazwa" />
-  <button onclick="search()">Szukaj</button>
 
+  <!-- WYNIKI -->
   <div id="results"></div>
 
-  <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
